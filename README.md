@@ -1,7 +1,9 @@
 # BioRealistic-SRM-STDP-TensorFlow
 This repository contains the implementation of a bio-realistic neuron model using TensorFlow, based on the Leaky Integrate-and-Fire (LIF) response model and Spike-Timing-Dependent Plasticity (STDP). The model simulates an array of neurons with detailed state variables and synaptic dynamics, capable of processing online input sequences. The development of this repository is based on this [work](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001377).
 
-Author: Kevin Juan Román Rafaele
+- Name: Kevin Juan Román Rafaele
+- LinkedIn: https://www.linkedin.com/in/kevin-juan-r-997530117/
+- Email: mrredsky.2095@gmail.com
 
 ## Table of Contents
 1. Introduction
