@@ -31,7 +31,7 @@ The model simulates an array of neurons, each with detailed state variables and 
 
 ### Membrane Potential Update
 $$
-um(t+1)=um(t)⋅e−Δtτm+K⋅∑iwi⋅xi(t)um​(t+1)=um​(t)⋅e−τm​Δt​+K⋅∑i​wi​⋅xi​(t)
+u_{m}(t+1)=u_{m}(t)⋅e−Δtτ_{m}+K⋅∑_{i}w_{i}⋅x_{i}(t)u_{m}​(t+1)=u_{m}​(t)⋅e−τ_{m}​Δt​+K⋅∑_{i}​w_{i}​⋅x_{i}​(t)
 $$
 
 ### Synaptic Potential Update
