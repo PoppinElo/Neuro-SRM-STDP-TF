@@ -9,12 +9,9 @@ Author: Kevin Juan Román Rafaele
 3. Model Description
 4. Generating Input Sequences
 5. Visualization Tools
-6. Installation
-7. Usage
-8. Examples
-9. Contributing
-10. License
-11. References
+6. Contributing
+7. License
+8. References
 
 ## Introduction
 This project implements a biologically-inspired neuron model to simulate neural dynamics and learning processes. It aims to provide a detailed and flexible framework for studying bio-realistic neuronal behavior and synaptic plasticity using modern machine learning tools.
@@ -27,56 +24,12 @@ The LIF model is a simplified representation of neuronal activity that captures 
 STDP is a biological learning rule observed in the brain, where the timing of spikes from pre- and post-synaptic neurons influences the strength of their connection. If a pre-synaptic neuron fires shortly before a post-synaptic neuron, the connection is strengthened (potentiation). Conversely, if the pre-synaptic neuron fires shortly after the post-synaptic neuron, the connection is weakened (depression).
 
 ## Model Description
-The model simulates an array of neurons, each with detailed state variables and synaptic mechanisms. The neuron's behavior is governed by the following key equations:
+The model simulates an array of neurons, each with detailed state variables and synaptic mechanisms. The neuron's behavior is governed by the following steps:
 
-### Membrane Potential Update
-$$
-u_{m}(t+1)=u_{m}(t)⋅e−Δtτ_{m}+K⋅∑_{i}w_{i}⋅x_{i}(t)u_{m}​(t+1)=u_{m}​(t)⋅e−τ_{m}​Δt​+K⋅∑_{i}​w_{i}​⋅x_{i}​(t)
-$$
-
-### Synaptic Potential Update
-$$
-us(t+1)=us(t)⋅e−Δtτs−K⋅∑iwi⋅xi(t)us​(t+1)=us​(t)⋅e−τs​Δt​−K⋅∑i​wi​⋅xi​(t)
-$$
-
-### Total Potential
-$$
-u(t+1)=um(t+1)+us(t+1)u(t+1)=um​(t+1)+us​(t+1)
-$$
-
-### Spike Generation
-$$
-if u(t+1)>θ and u(t+1)>u(t):if u(t+1)>θ and u(t+1)>u(t):
-um(t+1)=−2⋅θum​(t+1)=−2⋅θ
-us(t+1)=4⋅θus​(t+1)=4⋅θ
-output=1output=1
-else:else:
-output=0output=0
-$$
-
-### Weight Update
-$$
-if output=1:if output=1:
-Wi=Wi+dWp,iWi​=Wi​+dWp,i​
-if Wi>1:Wi=1if Wi​>1:Wi​=1
-dWp,i=0dWp,i​=0
-dWd,i=AddWd,i​=Ad​
-$$
-
-### Potentiation and Depression Dynamics
-$$
-dWp,i(t+1)=dWp,i(t)⋅e−ΔtτpdWp,i​(t+1)=dWp,i​(t)⋅e−τp​Δt​
-dWd,i(t+1)=dWd,i(t)⋅e−ΔtτddWd,i​(t+1)=dWd,i​(t)⋅e−τd​Δt​
-$$
-
-### Input-Triggered Updates
-$$
-if xi(t)=1:if xi​(t)=1:
-dWp,i=ApdWp,i​=Ap​
-Wi=Wi−dWd,iWi​=Wi​−dWd,i​
-if Wi<0:Wi=0if Wi​<0:Wi​=0
-dWd,i=0dWd,i​=0
-$$
+1. Membrane Potential Update
+2. Synaptic Potential Update
+3. Spike Generation
+4. Weight Update
 
 ## Generating Input Sequences
 ### Poisson Point Process
@@ -105,31 +58,6 @@ The visualization tools provide comprehensive insights into the neuron model's b
    - Weights: Bar plot of synaptic weights aligned with the extended pattern.
 
 These visualizations help analyze neuronal dynamics and synaptic adaptations.
-
-## Installation
-Clone the repository and install the required dependencies:
-```
-git clone https://github.com/yourusername/BioRealistic-SRM-STDP-TensorFlow.git
-cd BioRealistic-SRM-STDP-TensorFlow
-pip install -r requirements.txt
-```
-
-## Usage
-Load the model and generate input sequences to simulate neuronal behavior. Use the provided visualization tools to analyze the results.
-```
-from neuron_model import BioRealisticNeuronLayer
-from input_sequence import generate_input_sequences
-from visualization import plot_visualizations
-
-# Example usage
-input_sequences = generate_input_sequences(...)
-neuron_layer = BioRealisticNeuronLayer(...)
-neuron_layer.simulate(input_sequences)
-plot_visualizations(neuron_layer, input_sequences)
-```
-
-## Examples
-Refer to the examples directory for detailed usage examples, including input sequence generation, neuron layer simulation, and visualization.
 
 ## Contributing
 Contributions are welcome! Please read the CONTRIBUTING.md file for guidelines on how to contribute to this project.
