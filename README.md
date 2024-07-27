@@ -11,9 +11,10 @@ This repository contains the implementation of a bio-realistic neuron model usin
 3. Model Description
 4. Generating Input Sequences
 5. Visualization Tools
-6. Contributing
-7. License
-8. References
+6. Results
+7. Contributing
+8. License
+9. References
 
 ## Introduction
 This project implements a biologically-inspired neuron model to simulate neural dynamics and learning processes. It aims to provide a detailed and flexible framework for studying bio-realistic neuronal behavior and synaptic plasticity using modern machine learning tools.
@@ -60,6 +61,14 @@ The visualization tools provide comprehensive insights into the neuron model's b
    - Weights: Bar plot of synaptic weights aligned with the extended pattern.
 
 These visualizations help analyze neuronal dynamics and synaptic adaptations.
+
+## Results
+- During first 5000 time steps
+  ![Interval: 0 - 5000 ms](https://github.com/PoppinElo/Neuro-SRM-STDP-TF/blob/main/images/srmstdp-00000-05000.png)
+- During the second 5000 time steps
+  ![interval: 5000 - 10000 ms](https://github.com/PoppinElo/Neuro-SRM-STDP-TF/blob/main/images/srmstdp-05000-10000.png)
+- During last 1000 time steps:
+  ![interval: 29000 - 30000](https://github.com/PoppinElo/Neuro-SRM-STDP-TF/blob/main/images/srmstdp-29000-30000.png)
 
 ## Contributing
 Contributions are welcome! Please read the CONTRIBUTING.md file for guidelines on how to contribute to this project.
